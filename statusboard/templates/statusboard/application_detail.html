@@ -1,5 +1,4 @@
 <!-- statusboard/templates/statusboard/application_detail.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +23,8 @@
         {% endfor %}
     </ul>
 
+    <!-- Link to export application detail as CSV -->
+    <a href="/statusboard/application/{{ application.id }}/csv/">Download CSV</a>
     <a href="/">Back to Home</a>
 </body>
 </html>

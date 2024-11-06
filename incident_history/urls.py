@@ -22,5 +22,6 @@ from statusboard import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),  # Root URL pattern
+    path('statusboard/', include('statusboard.urls')),
     path('application/<int:app_id>/', views.application_detail, name='application_detail'),
 ]
