@@ -1,0 +1,29 @@
+<!-- statusboard/templates/statusboard/application_detail.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Detail</title>
+</head>
+<body>
+    <h1>Application: {{ application.name }}</h1>
+    <p>Status: {{ application.status }}</p>
+
+    <h2>Incidents</h2>
+    <ul>
+        {% for incident in incidents %}
+            <li>
+                <strong>Description:</strong> {{ incident.description }} <br>
+                <strong>Occurred at:</strong> {{ incident.occurred_at }} <br>
+                <strong>Resolved:</strong> {{ incident.resolved }}
+            </li>
+        {% empty %}
+            <li>No incidents reported for this application.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">Back to Home</a>
+</body>
+</html>
